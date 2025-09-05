@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // pelapor
             $table->text('description');
-            $table->string('photo')->nullable();
-            $table->dateTime('reported_at')->default(now());
+            $table->string('photo_path')->nullable();
+            $table->timestamp('reported_at')->useCurrent();
             $table->timestamps();
         });
     }
